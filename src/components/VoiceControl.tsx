@@ -29,7 +29,7 @@ export function VoiceControl() {
 
   return (
     <motion.div
-      className="relative rounded-3xl p-6 backdrop-blur-sm"
+      className="relative rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 backdrop-blur-sm"
       style={{
         background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)',
         border: '1px solid rgba(137, 197, 109, 0.2)',
@@ -39,10 +39,10 @@ export function VoiceControl() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center gap-4 w-64">
+      <div className="flex flex-col items-center gap-3 md:gap-4 w-56 sm:w-60 md:w-64">
         {/* Microphone Circle */}
         <motion.div
-          className="relative w-20 h-20 rounded-full flex items-center justify-center"
+          className="relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full flex items-center justify-center"
           style={{
             background: 'linear-gradient(135deg, #89C56D 0%, #7AB05D 100%)',
             boxShadow: '0 8px 24px rgba(137, 197, 109, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
@@ -78,14 +78,14 @@ export function VoiceControl() {
             }}
           />
           
-          <Mic className="w-9 h-9 text-white" strokeWidth={2.5} />
+          <Mic className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-white" strokeWidth={2.5} />
         </motion.div>
 
         {/* Listening Text */}
-        <div className="flex items-center gap-2">
-          <Volume2 className="w-4 h-4 text-[#89C56D]" />
+        <div className="flex items-center gap-1.5 md:gap-2">
+          <Volume2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#89C56D]" />
           <motion.span
-            className="text-[#89C56D] text-sm"
+            className="text-[#89C56D] text-xs md:text-sm"
             style={{
               textShadow: '0 0 15px rgba(137, 197, 109, 0.8), 0 0 30px rgba(137, 197, 109, 0.4)'
             }}
@@ -103,11 +103,11 @@ export function VoiceControl() {
         </div>
 
         {/* Voice Input Text with Animation */}
-        <div className="h-12 flex items-center justify-center w-full">
+        <div className="h-10 md:h-12 flex items-center justify-center w-full">
           <AnimatePresence mode="wait">
             <motion.p
               key={currentIndex}
-              className="text-white text-center"
+              className="text-white text-center text-sm md:text-base"
               style={{
                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)'
               }}
@@ -122,7 +122,7 @@ export function VoiceControl() {
         </div>
 
         {/* Audio Wave Visualization */}
-        <div className="flex items-center justify-center gap-1 h-12">
+        <div className="flex items-center justify-center gap-0.5 md:gap-1 h-10 md:h-12">
           {Array.from({ length: waveCount }).map((_, index) => {
             const isCenter = Math.abs(index - waveCount / 2) < 2;
             const height = isCenter ? 100 : 30 + Math.random() * 70;
