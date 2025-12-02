@@ -2,6 +2,13 @@ import { Download } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 
+// Icono de Google Play Store
+const PlayStoreIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+  </svg>
+);
+
 export function DownloadButton() {
   const handleClick = () => {
     window.open('https://play.google.com/store/apps/details?id=com.finedu.app', '_blank');
@@ -74,7 +81,7 @@ export function DownloadButton() {
                 ease: "easeInOut"
               }}
             >
-              <Download className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" strokeWidth={2.5} />
+              <PlayStoreIcon className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
             </motion.div>
             <span 
               className="text-white text-lg sm:text-xl md:text-2xl tracking-tight"
@@ -114,7 +121,7 @@ export function DownloadButton() {
         <motion.div
           className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            background: 'radial-gradient(circle, rgba(137, 197, 109, 0.3) 0%, rgba(137, 197, 109, 0.1) 50%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(30, 41, 59, 0.4) 0%, rgba(30, 41, 59, 0.2) 50%, transparent 70%)',
             filter: 'blur(20px)'
           }}
         />
@@ -123,17 +130,17 @@ export function DownloadButton() {
         <div
           className="relative px-10 py-3 sm:px-12 sm:py-3.5 md:px-14 md:py-4 rounded-full shadow-lg overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #89C56D 0%, #7AB05D 50%, #6B9A4D 100%)',
-            boxShadow: '0 6px 25px rgba(137, 197, 109, 0.3), 0 0 0 1px rgba(137, 197, 109, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+            background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(137, 197, 109, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
           }}
         >
           {/* Button content */}
           <div className="relative flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3">
-            <Play className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" strokeWidth={2.5} fill="currentColor" />
+            <Download className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" strokeWidth={2.5} />
             <span 
               className="text-white text-base sm:text-lg md:text-xl tracking-tight"
               style={{
-                textShadow: '0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2)',
+                textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.1)',
                 fontWeight: 600
               }}
             >
@@ -143,12 +150,12 @@ export function DownloadButton() {
 
           {/* Bottom gradient accent */}
           <div 
-            className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/15 to-transparent pointer-events-none"
+            className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"
           />
           
           {/* Top highlight */}
           <div 
-            className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"
+            className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"
           />
         </div>
       </motion.a>
