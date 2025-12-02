@@ -7,12 +7,6 @@ export function DownloadButton() {
     window.open('https://play.google.com/store/apps/details?id=com.finedu.app', '_blank');
   };
 
-  const handleTryApp = () => {
-    // Aquí puedes agregar la lógica para probar la aplicación
-    // Por ejemplo, abrir una demo o versión web
-    console.log('Probando la aplicación...');
-  };
-
   return (
     <div className="flex flex-col items-center gap-4">
       {/* Botón principal de descarga */}
@@ -106,11 +100,12 @@ export function DownloadButton() {
       </motion.button>
 
       {/* Botón secundario "Prueba la aplicación" */}
-      <motion.button
-        className="relative group"
+      <motion.a
+        href="/app-release.apk"
+        download="FinEdu-App.apk"
+        className="relative group cursor-pointer"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
-        onClick={handleTryApp}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -156,7 +151,7 @@ export function DownloadButton() {
             className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"
           />
         </div>
-      </motion.button>
+      </motion.a>
     </div>
   );
 }
