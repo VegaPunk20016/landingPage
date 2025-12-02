@@ -57,8 +57,8 @@ export default function App() {
                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.1)'
               }}
             >
-              ¿Qué tienes que hacer para<br/>
-              organizar tus finanzas?
+              ¿Qué tengo que hacer para<br />
+              organizar mis finanzas?
             </motion.p>
 
             {/* Hero Headline */}
@@ -86,7 +86,7 @@ export default function App() {
                   textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(137, 197, 109, 0.15)'
                 }}
               >
-                ¡Hablar!
+                ¡Habla!
               </motion.span>
               <span 
                 className="block"
