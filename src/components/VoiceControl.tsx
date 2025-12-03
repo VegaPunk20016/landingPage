@@ -29,7 +29,7 @@ export function VoiceControl() {
 
   return (
     <motion.div
-      className="relative rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 backdrop-blur-sm"
+      className="relative rounded-2xl md:rounded-3xl p-[clamp(1rem,2vw,1.5rem)] backdrop-blur-sm w-full max-w-sm"
       style={{
         background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)',
         border: '1px solid rgba(137, 197, 109, 0.2)',
@@ -39,10 +39,10 @@ export function VoiceControl() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center gap-3 md:gap-4 w-56 sm:w-60 md:w-64">
+      <div className="flex flex-col items-center gap-3 md:gap-4 w-full">
         {/* Microphone Circle */}
         <motion.div
-          className="relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full flex items-center justify-center"
+          className="relative w-[clamp(3.5rem,10vw,5rem)] h-[clamp(3.5rem,10vw,5rem)] rounded-full flex items-center justify-center"
           style={{
             background: 'linear-gradient(135deg, #89C56D 0%, #7AB05D 100%)',
             boxShadow: '0 8px 24px rgba(137, 197, 109, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'

@@ -1,6 +1,7 @@
 import { Download } from 'lucide-react';
-import { motion } from 'motion/react';
-import { Play } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { CountdownBanner } from './CountdownBanner';
 
 // Icono de Google Play Store
 const PlayStoreIcon = ({ className }: { className?: string }) => (
@@ -10,15 +11,49 @@ const PlayStoreIcon = ({ className }: { className?: string }) => (
 );
 
 export function DownloadButton() {
+  const [showBanner, setShowBanner] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    if (!showBanner) return;
+
+    const calculateTimeLeft = () => {
+      const targetDate = new Date('2025-12-05T00:00:00');
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, [showBanner]);
+
   const handleClick = () => {
-    window.open('https://play.google.com/store/apps/details?id=com.finedu.app', '_blank');
+    setShowBanner(true);
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 w-full max-w-sm">
       {/* Botón principal de descarga */}
       <motion.button
-        className="relative group"
+        className="relative group w-full"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         onClick={handleClick}
@@ -34,7 +69,7 @@ export function DownloadButton() {
 
         {/* Main button */}
         <motion.div
-          className="relative px-10 py-4 sm:px-12 sm:py-5 md:px-16 md:py-6 rounded-full shadow-xl overflow-hidden"
+          className="relative px-[clamp(2rem,5vw,4rem)] py-[clamp(0.875rem,2vh,1.5rem)] rounded-full shadow-xl overflow-hidden w-full"
           style={{
             background: 'linear-gradient(135deg, #89C56D 0%, #7AB05D 50%, #6B9A4D 100%)',
             boxShadow: '0 10px 40px rgba(137, 197, 109, 0.4), 0 0 0 1px rgba(137, 197, 109, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
@@ -110,7 +145,7 @@ export function DownloadButton() {
       <motion.a
         href="/app-release.apk"
         download="FinEdu-App.apk"
-        className="relative group cursor-pointer"
+        className="relative group cursor-pointer w-full"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0, y: 20 }}
@@ -128,7 +163,7 @@ export function DownloadButton() {
 
         {/* Main button */}
         <div
-          className="relative px-10 py-3 sm:px-12 sm:py-3.5 md:px-14 md:py-4 rounded-full shadow-lg overflow-hidden"
+          className="relative px-[clamp(2rem,5vw,3.5rem)] py-[clamp(0.75rem,1.5vh,1rem)] rounded-full shadow-lg overflow-hidden w-full"
           style={{
             background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)',
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(137, 197, 109, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
@@ -138,7 +173,7 @@ export function DownloadButton() {
           <div className="relative flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3">
             <Download className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" strokeWidth={2.5} />
             <span 
-              className="text-white text-base sm:text-lg md:text-xl tracking-tight"
+              className="text-white text-[clamp(0.875rem,2vw,1.25rem)] tracking-tight"
               style={{
                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.1)',
                 fontWeight: 600
@@ -159,6 +194,16 @@ export function DownloadButton() {
           />
         </div>
       </motion.a>
+
+      {/* Banner de cuenta regresiva */}
+      <AnimatePresence>
+        {showBanner && (
+          <CountdownBanner
+            timeLeft={timeLeft}
+            onClose={() => setShowBanner(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

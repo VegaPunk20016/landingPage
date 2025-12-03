@@ -11,7 +11,7 @@ export function Logo() {
       transition={{ duration: 0.6 }}
     >
       <motion.div 
-        className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center"
+        className="w-[clamp(2rem,5vw,3rem)] h-[clamp(2rem,5vw,3rem)] flex items-center justify-center"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.3 }}
       >
@@ -48,7 +48,7 @@ export function Logo() {
         }}
       >
         <Sparkles 
-          className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#89C56D]"
+          className="w-[clamp(0.75rem,2vw,1rem)] h-[clamp(0.75rem,2vw,1rem)] text-[#89C56D]"
           style={{
             filter: 'drop-shadow(0 0 8px rgba(137, 197, 109, 0.9)) drop-shadow(0 0 15px rgba(137, 197, 109, 0.6))'
           }}

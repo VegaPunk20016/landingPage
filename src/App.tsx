@@ -7,7 +7,7 @@ import heroImage from 'figma:asset/a758189618ffffa8d3e8ac06348262d011e44d99.png'
 
 export default function App() {
   return (
-    <div className="relative w-full min-h-screen md:h-screen overflow-y-auto md:overflow-hidden bg-black">
+    <div className="relative w-full min-h-screen overflow-y-auto bg-black">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
@@ -22,7 +22,7 @@ export default function App() {
 
       {/* Decorative green glow */}
       <motion.div 
-        className="absolute top-20 left-10 md:left-40 w-64 md:w-96 h-64 md:h-96 rounded-full blur-3xl"
+        className="absolute top-[5vh] left-[2vw] md:left-[8vw] w-[40vw] md:w-[20vw] h-[40vw] md:h-[20vw] max-w-96 max-h-96 rounded-full blur-3xl"
         style={{
           background: 'radial-gradient(circle, rgba(137, 197, 109, 0.2) 0%, transparent 70%)'
         }}
@@ -38,18 +38,18 @@ export default function App() {
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col">
+      <div className="relative z-10 min-h-screen flex flex-col">
         {/* Header */}
-        <header className="px-4 sm:px-6 md:px-12 py-3 md:py-5">
+        <header className="px-[4vw] md:px-[6vw] lg:px-[5vw] py-[2vh] md:py-[2.5vh]">
           <Logo />
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 flex flex-col md:flex-row items-start md:items-start justify-between px-4 sm:px-6 md:px-12 max-w-7xl w-full pt-4 md:pt-12 pb-6 md:pb-0 gap-6 md:gap-0">
-          <div className="max-w-2xl w-full">
+        <main className="flex-1 flex flex-col lg:flex-row items-start lg:items-start justify-between px-[4vw] md:px-[6vw] lg:px-[5vw] max-w-[1400px] w-full mx-auto pt-[2vh] lg:pt-[6vh] pb-[4vh] lg:pb-[4vh] gap-6 lg:gap-8 xl:gap-12">
+          <div className="max-w-2xl w-full flex-shrink">
             {/* Question */}
             <motion.p 
-              className="text-white/95 text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4 max-w-2xl leading-tight"
+              className="text-white/95 text-[clamp(1.25rem,4vw,2.25rem)] mb-[2vh] max-w-2xl leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -63,7 +63,7 @@ export default function App() {
 
             {/* Hero Headline */}
             <motion.h1 
-              className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 md:mb-6 leading-[1.1] tracking-tight"
+              className="text-white text-[clamp(2rem,5vw,3rem)] lg:text-[clamp(2.5rem,6vw,4rem)] mb-[2vh] md:mb-6 leading-[1.1] tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
@@ -122,14 +122,14 @@ export default function App() {
                 <motion.span 
                   className="text-[#89C56D] text-base md:text-lg"
                   style={{
-                    textShadow: '0 0 20px rgba(137, 197, 109, 1), 0 0 40px rgba(137, 197, 109, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8)',
+                    textShadow: '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
                     fontWeight: 600
                   }}
                   animate={{
                     textShadow: [
-                      '0 0 20px rgba(137, 197, 109, 1), 0 0 40px rgba(137, 197, 109, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8)',
-                      '0 0 30px rgba(137, 197, 109, 1), 0 0 60px rgba(137, 197, 109, 0.8), 0 2px 6px rgba(0, 0, 0, 0.8)',
-                      '0 0 20px rgba(137, 197, 109, 1), 0 0 40px rgba(137, 197, 109, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8)'
+                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
+                      '0 0 18px rgba(137, 197, 109, 0.8), 0 0 35px rgba(137, 197, 109, 0.5), 0 1px 3px rgba(255, 255, 255, 0.5)',
+                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)'
                     ]
                   }}
                   transition={{
@@ -151,14 +151,14 @@ export default function App() {
                 <motion.span 
                   className="text-[#89C56D] text-base md:text-lg"
                   style={{
-                    textShadow: '0 0 20px rgba(137, 197, 109, 1), 0 0 40px rgba(137, 197, 109, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8)',
+                    textShadow: '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
                     fontWeight: 600
                   }}
                   animate={{
                     textShadow: [
-                      '0 0 20px rgba(137, 197, 109, 1), 0 0 40px rgba(137, 197, 109, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8)',
-                      '0 0 30px rgba(137, 197, 109, 1), 0 0 60px rgba(137, 197, 109, 0.8), 0 2px 6px rgba(0, 0, 0, 0.8)',
-                      '0 0 20px rgba(137, 197, 109, 1), 0 0 40px rgba(137, 197, 109, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8)'
+                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
+                      '0 0 18px rgba(137, 197, 109, 0.8), 0 0 35px rgba(137, 197, 109, 0.5), 0 1px 3px rgba(255, 255, 255, 0.5)',
+                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)'
                     ]
                   }}
                   transition={{
@@ -201,7 +201,7 @@ export default function App() {
               <span 
                 className="text-[#89C56D] text-sm md:text-base"
                 style={{
-                  textShadow: '0 0 25px rgba(137, 197, 109, 1), 0 0 50px rgba(137, 197, 109, 0.8), 0 2px 6px rgba(0, 0, 0, 0.9)',
+                  textShadow: '0 0 15px rgba(137, 197, 109, 0.7), 0 0 30px rgba(137, 197, 109, 0.4), 0 1px 3px rgba(255, 255, 255, 0.5)',
                   fontWeight: 700,
                   letterSpacing: '0.02em'
                 }}
