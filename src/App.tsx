@@ -118,18 +118,18 @@ export default function App() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#89C56D]" strokeWidth={3} />
+                <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" strokeWidth={3} />
                 <motion.span 
-                  className="text-[#89C56D] text-base md:text-lg"
+                  className="text-white text-base md:text-lg"
                   style={{
-                    textShadow: '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
+                    textShadow: '0 0 12px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.4)',
                     fontWeight: 600
                   }}
                   animate={{
                     textShadow: [
-                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
-                      '0 0 18px rgba(137, 197, 109, 0.8), 0 0 35px rgba(137, 197, 109, 0.5), 0 1px 3px rgba(255, 255, 255, 0.5)',
-                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)'
+                      '0 0 12px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.4)',
+                      '0 0 18px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
+                      '0 0 12px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.4)'
                     ]
                   }}
                   transition={{
@@ -147,18 +147,18 @@ export default function App() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#89C56D]" strokeWidth={3} />
+                <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" strokeWidth={3} />
                 <motion.span 
-                  className="text-[#89C56D] text-base md:text-lg"
+                  className="text-white text-base md:text-lg"
                   style={{
-                    textShadow: '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
+                    textShadow: '0 0 12px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.4)',
                     fontWeight: 600
                   }}
                   animate={{
                     textShadow: [
-                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)',
-                      '0 0 18px rgba(137, 197, 109, 0.8), 0 0 35px rgba(137, 197, 109, 0.5), 0 1px 3px rgba(255, 255, 255, 0.5)',
-                      '0 0 12px rgba(137, 197, 109, 0.6), 0 0 25px rgba(137, 197, 109, 0.3), 0 1px 3px rgba(255, 255, 255, 0.4)'
+                      '0 0 12px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.4)',
+                      '0 0 18px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
+                      '0 0 12px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.4)'
                     ]
                   }}
                   transition={{
@@ -180,10 +180,10 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               style={{
-                background: 'linear-gradient(135deg, rgba(137, 197, 109, 0.25) 0%, rgba(137, 197, 109, 0.15) 100%)',
-                border: '2px solid rgba(137, 197, 109, 0.6)',
-                filter: 'drop-shadow(0 0 20px rgba(137, 197, 109, 0.7))',
-                boxShadow: '0 0 30px rgba(137, 197, 109, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%)',
+                border: '2px solid rgba(255, 255, 255, 0.4)',
+                filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))',
+                boxShadow: '0 0 30px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
               }}
             >
               <motion.div
@@ -196,12 +196,12 @@ export default function App() {
                   ease: "easeInOut"
                 }}
               >
-                <Zap className="w-4 h-4 md:w-5 md:h-5 text-[#89C56D]" fill="#89C56D" strokeWidth={2} />
+                <Zap className="w-4 h-4 md:w-5 md:h-5 text-white" fill="white" strokeWidth={2} />
               </motion.div>
               <span 
-                className="text-[#89C56D] text-sm md:text-base"
+                className="text-white text-sm md:text-base"
                 style={{
-                  textShadow: '0 0 15px rgba(137, 197, 109, 0.7), 0 0 30px rgba(137, 197, 109, 0.4), 0 1px 3px rgba(255, 255, 255, 0.5)',
+                  textShadow: '0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5)',
                   fontWeight: 700,
                   letterSpacing: '0.02em'
                 }}
